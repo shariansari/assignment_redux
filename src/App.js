@@ -17,6 +17,7 @@ import Modal from 'react-bootstrap/Modal';
 function App() {
   const [show, setShow] = useState(false);
   const [mo, setMo] = useState([]);
+  const [grid,setGrid] =useState(3)
 
   const handleClose = () => setShow(false);
   const handleShow = (r) =>{
@@ -43,14 +44,14 @@ dispatch(fetchTodos(query))
    
       <Container fluid style={{display:"flex",alignItems:"center",justifyContent:"center"}}>
       <NavDropdown title="Grid View" id="navbarScrollingDropdown" style={{marginRight:"10px"}}>
-              <NavDropdown.Item href="#action3">5 in a row</NavDropdown.Item>
-              <NavDropdown.Item href="#action4">
+              <NavDropdown.Item onClick={()=>setGrid(5)}>5 in a row</NavDropdown.Item>
+              <NavDropdown.Item onClick={()=>setGrid(4)}>
                 4 in a row
               </NavDropdown.Item>
-              <NavDropdown.Item href="#action4">
+              <NavDropdown.Item onClick={()=>setGrid(3)}>
                 3 in a row
               </NavDropdown.Item>
-              <NavDropdown.Item href="#action4">
+              <NavDropdown.Item onClick={()=>setGrid(2)}>
                 2 in a row
               </NavDropdown.Item>
               
@@ -76,7 +77,7 @@ dispatch(fetchTodos(query))
 
     <div className="container">
         <div>
-          <Row xs={1} md={3} className="g-4">
+          <Row xs={1} md={grid} className="g-4">
             {state.todo&&state.todo.data&&state.todo.data.photos.map((item, idx) => (
               <Col key={idx}>
                 <Card
@@ -103,6 +104,7 @@ dispatch(fetchTodos(query))
           <Modal.Title>{mo.alt}</Modal.Title>
         </Modal.Header>
         <Modal.Body>
+          <img src={mo.src.landscape} style={{height:"240px"}}/>
           <p> <strong>Photographer Name :</strong>{mo.photographer}</p>
             <p><strong>Photographer Url :</strong>{mo.photographer_url}</p>
             <p><strong>Photographer id :</strong>{mo.id}</p>
