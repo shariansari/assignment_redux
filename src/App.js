@@ -104,7 +104,6 @@ dispatch(fetchTodos(query))
           <Modal.Title>{mo.alt}</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <img src={mo.src.landscape} style={{height:"240px"}}/>
           <p> <strong>Photographer Name :</strong>{mo.photographer}</p>
             <p><strong>Photographer Url :</strong>{mo.photographer_url}</p>
             <p><strong>Photographer id :</strong>{mo.id}</p>
