@@ -43,7 +43,7 @@ dispatch(fetchTodos(query))
      <Navbar bg="primary" expand="lg">
    
       <Container fluid style={{display:"flex",alignItems:"center",justifyContent:"center"}}>
-      <NavDropdown title="Grid View" id="navbarScrollingDropdown" style={{marginRight:"10px"}}>
+      <NavDropdown title="Grid View" id="navbarScrollingDropdown" style={{marginRight:"10px",color:"white"}}>
               <NavDropdown.Item onClick={()=>setGrid(5)}>5 in a row</NavDropdown.Item>
               <NavDropdown.Item onClick={()=>setGrid(4)}>
                 4 in a row
@@ -77,11 +77,11 @@ dispatch(fetchTodos(query))
 
     <div className="container">
         <div>
-          <Row xs={1} md={grid} className="g-4">
+          <Row xs={1} md={grid} className="g-3">
             {state.todo&&state.todo.data&&state.todo.data.photos.map((item, idx) => (
               <Col key={idx}>
                 <Card
-                  className="container mt-3 p-4container mt-3 p-4 shadow p-3 mb-5 bg-body rounded"
+                  className="container mt-1 p-1container mt-1 p-1 shadow p-3 mb-1 bg-body rounded"
                   key={idx}
                 >
                   <Card.Img variant="top" src={item.src.landscape} alt={item.alt} />
@@ -104,6 +104,7 @@ dispatch(fetchTodos(query))
           <Modal.Title>{mo.alt}</Modal.Title>
         </Modal.Header>
         <Modal.Body>
+          {mo.src&&mo.src.landscape&&<img src={mo.src.landscape} style={{width:"462px"}}/>}
           <p> <strong>Photographer Name :</strong>{mo.photographer}</p>
             <p><strong>Photographer Url :</strong>{mo.photographer_url}</p>
             <p><strong>Photographer id :</strong>{mo.id}</p>
