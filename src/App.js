@@ -104,7 +104,7 @@ dispatch(fetchTodos(query))
           <Modal.Title>{mo.alt}</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          {mo.src&&mo.src.landscape&&<div style={{display:"flex",justifyContent:"center"}}><img src={mo.src.landscape} style={{height:"200px"}}/></div>}
+          {mo.src&&mo.src.landscape&&<div style={{display:"flex",justifyContent:"center"}}><img src={mo.src.landscape} style={{height:"150px",marginBottom:"10px"}}/></div>}
           <p> <strong>Photographer Name :</strong>{mo.photographer}</p>
             <p><strong>Photographer Url :</strong>{mo.photographer_url}</p>
             <p><strong>Photographer id :</strong>{mo.id}</p>
